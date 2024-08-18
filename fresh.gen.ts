@@ -4,6 +4,7 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_aquos from "./routes/api/aquos.ts";
 import * as $aquos_index from "./routes/aquos/index.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $ArrowControl from "./islands/ArrowControl.tsx";
@@ -17,6 +18,7 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/aquos.ts": $api_aquos,
     "./routes/aquos/index.tsx": $aquos_index,
     "./routes/index.tsx": $index,
   },

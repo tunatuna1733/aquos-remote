@@ -7,15 +7,15 @@ type Props = {
 };
 
 const Remote = ({ feature, args, children }: Props) => {
+  const params = args
+    ? Object.entries(args).map(([k, v]) => `${k}=${v}`)
+      .reduce((acc, curr) => acc + "&" + curr)
+    : "";
+  const url = `/api/aquos?feature=${feature}&${params}`;
   return (
     <div>
       <button
         onClick={() => {
-          const params = args
-            ? Object.entries(args).map(([k, v]) => `${k}=${v}`)
-              .reduce((acc, curr) => acc + "&" + curr)
-            : "";
-          const url = `${Deno.env.get("BASE_URL")}/aquos/${feature}?${params}`;
           fetch(url);
         }}
         class="flex justify-center items-center size-16 rounded-lg bg-cyan-600 hover:bg-cyan-700 w-full"
